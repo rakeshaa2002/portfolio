@@ -38,18 +38,21 @@ export const Home = () => {
               <a
                 href="/portfolio/Rakesha%20N%20Resume.pdf"
                 download="Rakesha N Resume.pdf"
-                className="border border-white/10 text-gray-300 py-3 px-6 rounded font-medium transition-all duration-200 
-             hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255, 255, 255, 0.1)] hover:bg-white/5 flex items-center justify-center gap-2"
+                className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 px-6 rounded font-medium transition-all duration-300
+                           hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.4)]"
               >
-                Resume 📄
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Resume
               </a>
             </div>
           </div>
 
-          <div className="md:w-1/2 flex justify-center z-10">
+          <div className="md:w-1/2 flex justify-center z-10 relative">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500/20 shadow-2xl">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500/20 shadow-2xl z-20">
                 <img
                   src="/portfolio/profile.jpg"
                   alt="Rakesha N"

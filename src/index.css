@@ -19,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
   z-index: -1;
@@ -28,22 +28,59 @@ body::before {
 
 @layer utilities {
   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
   }
-  .animate-blink { animation: blink 0.8s step-end infinite; }
+
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
 
   @keyframes loading {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(250%); }
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(250%);
+    }
   }
-  .animate-loading-bar { animation: loading 0.8s ease infinite; }
-  
-  .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+
+  .animate-loading-bar {
+    animation: loading 0.8s ease infinite;
   }
+
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: spin-slow 20s linear infinite reverse;
 }
 
 .reveal {
@@ -61,13 +98,16 @@ body::before {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #3b82f6;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #2563eb;
 }
