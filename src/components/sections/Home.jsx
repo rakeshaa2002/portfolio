@@ -1,4 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { BentoCard } from "../BentoCard";
 
 // 🔗 Update these with your real profile URLs.
 const socials = [
@@ -19,64 +20,88 @@ const socials = [
   },
 ];
 
+// Numbers grounded in the resume: 5 projects, 3 certifications, 12+ technologies.
+const stats = [
+  { value: "5+", label: "Projects Built", accent: "cyan", color: "#22d3ee" },
+  { value: "3", label: "Certifications", accent: "violet", color: "#c084fc" },
+  { value: "12+", label: "Technologies", accent: "emerald", color: "#34d399" },
+];
+
 export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-screen flex items-center justify-center py-28 px-4"
     >
       <RevealOnScroll>
-        <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 px-4">
-          <div className="md:w-1/2 text-center md:text-left z-10">
-            <span className="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-300 border border-blue-500/20">
+        <div className="max-w-6xl w-full mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[minmax(120px,auto)]">
+          {/* Intro */}
+          <BentoCard accent="violet" className="col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-center">
+            <span className="inline-flex items-center gap-2 w-fit mb-5 px-3 py-1 rounded-full text-xs bg-green-500/10 text-green-300 border border-green-500/20">
               <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
               Available for full-stack opportunities
             </span>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
-              Hi, I'm Rakesha N
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              Hi, I'm <span className="text-rainbow">Rakesha N</span>
             </h1>
-
-            <h2 className="text-xl md:text-2xl font-semibold text-gray-200 mb-6">
+            <h2 className="text-lg md:text-2xl font-semibold text-gray-200 mt-2 mb-4">
               Full Stack Developer
               <span className="text-blue-400"> · Django &amp; React.js</span>
             </h2>
-
-            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed mb-6">
               I build scalable web applications — from enterprise CRM systems and
-              REST APIs to AI-powered platforms. Hands-on with Django, Django REST
-              Framework, React.js, PostgreSQL, Redis and Docker, with a strong focus
-              on clean backend design and performance.
+              REST APIs to AI-powered platforms — with a strong focus on clean
+              backend design and performance.
             </p>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                className="bg-blue-500 hover:bg-blue-400 text-white py-2.5 px-5 rounded-lg font-medium transition-all hover:-translate-y-0.5"
               >
                 View Projects
               </a>
-
               <a
                 href="#contact"
-                className="border border-blue-500/50 text-blue-400 py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-blue-500/10"
+                className="border border-blue-500/50 text-blue-400 py-2.5 px-5 rounded-lg font-medium transition-all hover:-translate-y-0.5 hover:bg-blue-500/10"
               >
                 Contact Me
               </a>
-
-              <a
-                href="/portfolio/Rakesha-N-Resume.pdf"
-                download="Rakesha N Resume.pdf"
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 px-6 rounded font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Resume
-              </a>
             </div>
+          </BentoCard>
 
-            <div className="flex gap-4 mt-8 justify-center md:justify-start">
+          {/* Photo */}
+          <BentoCard accent="cyan" padded={false} className="col-span-2 lg:col-span-2 row-span-2 group">
+            <img
+              src="/portfolio/profile.jpg"
+              alt="Rakesha N"
+              className="w-full h-full min-h-[260px] object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-5">
+              <p className="font-mono text-sm text-cyan-300">&lt;RN/&gt;</p>
+              <p className="text-xs text-gray-300">Bengaluru, Karnataka · India</p>
+            </div>
+          </BentoCard>
+
+          {/* Stats */}
+          {stats.map((s) => (
+            <BentoCard
+              key={s.label}
+              accent={s.accent}
+              className="flex flex-col items-center justify-center text-center"
+            >
+              <span className="text-3xl md:text-4xl font-bold" style={{ color: s.color }}>
+                {s.value}
+              </span>
+              <span className="text-xs text-gray-400 mt-1">{s.label}</span>
+            </BentoCard>
+          ))}
+
+          {/* Socials + resume */}
+          <BentoCard accent="fuchsia" className="flex flex-col items-center justify-center gap-3">
+            <div className="flex gap-4">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -92,20 +117,17 @@ export const Home = () => {
                 </a>
               ))}
             </div>
-          </div>
-
-          <div className="md:w-1/2 flex justify-center z-10 relative">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500/20 shadow-2xl z-20">
-                <img
-                  src="/portfolio/profile.jpg"
-                  alt="Rakesha N"
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-            </div>
-          </div>
+            <a
+              href="/portfolio/Rakesha-N-Resume.pdf"
+              download="Rakesha N Resume.pdf"
+              className="flex items-center gap-2 text-xs bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2 px-4 rounded-lg font-medium transition-all hover:-translate-y-0.5"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Resume
+            </a>
+          </BentoCard>
         </div>
       </RevealOnScroll>
     </section>

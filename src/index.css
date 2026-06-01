@@ -65,6 +65,80 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Bento card — colors driven by CSS custom properties (set per-card via accents) */
+.bento {
+  --sheen-1: rgba(56, 189, 248, 0.5);
+  --sheen-2: rgba(124, 58, 237, 0.5);
+  --glow: rgba(59, 130, 246, 0.4);
+  --tint: rgba(59, 130, 246, 0.12);
+  --bd: rgba(59, 130, 246, 0.55);
+
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(135% 135% at 0% 0%, var(--tint), transparent 55%),
+    rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.bento:hover {
+  transform: translateY(-4px);
+  border-color: var(--bd);
+  box-shadow: 0 16px 50px -12px var(--glow);
+}
+
+/* Animated gradient sheen border, colored per accent */
+.bento::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    130deg,
+    var(--sheen-1),
+    transparent 38%,
+    transparent 62%,
+    var(--sheen-2)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.bento:hover::before {
+  opacity: 1;
+}
+
+.text-gradient {
+  background: linear-gradient(110deg, #60a5fa, #22d3ee 45%, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated multi-color gradient text for the name */
+.text-rainbow {
+  background: linear-gradient(110deg, #38bdf8, #a855f7, #f472b6, #22d3ee, #38bdf8);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-pan 6s linear infinite;
+}
+
+@keyframes rainbow-pan {
+  to {
+    background-position: 250% center;
+  }
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
