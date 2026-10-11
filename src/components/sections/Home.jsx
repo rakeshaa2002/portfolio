@@ -21,10 +21,9 @@ const socials = [
   },
 ];
 
-// Numbers grounded in the resume: 5 projects, 2 production systems, 15+ technologies.
+// Numbers grounded in the resume: 5 projects, 15+ technologies.
 const stats = [
   { value: "5+", label: "Projects Built", accent: "cyan", color: "#22d3ee" },
-  { value: "2", label: "Production ERP/CRMs", accent: "violet", color: "#c084fc" },
   { value: "15+", label: "Technologies", accent: "emerald", color: "#34d399" },
 ];
 
@@ -88,7 +87,7 @@ export const Home = () => {
           ))}
 
           {/* Socials + resume */}
-          <BentoCard accent="fuchsia" className="flex flex-col items-center justify-center gap-3">
+          <BentoCard accent="fuchsia" className="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col sm:flex-row items-center justify-around gap-4 py-4 px-6">
             <div className="flex gap-4">
               {socials.map((s) => (
                 <a
@@ -97,7 +96,7 @@ export const Home = () => {
                   target={s.href.startsWith("mailto:") ? undefined : "_blank"}
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="text-gray-400 hover:text-blue-400 hover:-translate-y-0.5 transition-all"
+                  className="text-gray-400 hover:text-blue-400 hover:-translate-y-0.5 transition-all p-2 rounded-lg bg-white/5 hover:bg-white/10"
                 >
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d={s.icon} />
@@ -108,12 +107,12 @@ export const Home = () => {
             <a
               href="/portfolio/Rakesha-N-Resume.pdf"
               download="Rakesha N Resume.pdf"
-              className="flex items-center gap-2 text-xs bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2 px-4 rounded-lg font-medium transition-all hover:-translate-y-0.5"
+              className="flex items-center gap-2 text-sm bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2.5 px-5 rounded-lg font-medium transition-all hover:-translate-y-0.5 shadow-md shadow-blue-500/20"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Resume
+              Download Resume
             </a>
           </BentoCard>
         </div>
