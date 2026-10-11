@@ -1,5 +1,6 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { BentoCard } from "../BentoCard";
+import { LinkedInProfileCard } from "../LinkedInProfileCard";
 
 // 🔗 Update these with your real profile URLs.
 const socials = [
@@ -10,7 +11,7 @@ const socials = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/rakesha-n",
+    href: "https://www.linkedin.com/in/rakesha-n-a57269226/",
     icon: "M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.22 8.25h4.54V24H.22V8.25zM8.34 8.25h4.35v2.15h.06c.61-1.15 2.09-2.36 4.31-2.36 4.61 0 5.46 3.03 5.46 6.97V24h-4.54v-6.99c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24H8.34V8.25z",
   },
   {
@@ -20,21 +21,21 @@ const socials = [
   },
 ];
 
-// Numbers grounded in the resume: 5 projects, 3 certifications, 12+ technologies.
+// Numbers grounded in the resume: 5 projects, 2 production systems, 15+ technologies.
 const stats = [
   { value: "5+", label: "Projects Built", accent: "cyan", color: "#22d3ee" },
-  { value: "3", label: "Certifications", accent: "violet", color: "#c084fc" },
-  { value: "12+", label: "Technologies", accent: "emerald", color: "#34d399" },
+  { value: "2", label: "Production ERP/CRMs", accent: "violet", color: "#c084fc" },
+  { value: "15+", label: "Technologies", accent: "emerald", color: "#34d399" },
 ];
 
 export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center py-28 px-4"
+      className="min-h-screen flex items-center justify-center py-24 sm:py-28 px-4 sm:px-6 lg:px-8 xl:px-12 w-full"
     >
       <RevealOnScroll>
-        <div className="max-w-6xl w-full mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[minmax(120px,auto)]">
+        <div className="w-full max-w-7xl 2xl:max-w-[1560px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[minmax(120px,auto)]">
           {/* Intro */}
           <BentoCard accent="violet" className="col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-center">
             <span className="inline-flex items-center gap-2 w-fit mb-5 px-3 py-1 rounded-full text-xs bg-green-500/10 text-green-300 border border-green-500/20">
@@ -47,12 +48,10 @@ export const Home = () => {
             </h1>
             <h2 className="text-lg md:text-2xl font-semibold text-gray-200 mt-2 mb-4">
               Full Stack Developer
-              <span className="text-blue-400"> · Django &amp; React.js</span>
+              <span className="text-blue-400"> · Django/DRF, React &amp; Node.js</span>
             </h2>
             <p className="text-gray-400 leading-relaxed mb-6">
-              I build scalable web applications — from enterprise CRM systems and
-              REST APIs to AI-powered platforms — with a strong focus on clean
-              backend design and performance.
+              Full Stack Developer (Django/DRF + React + Node.js) with internship and professional experience building production-grade CRM/ERP systems and an AI medical assistant using RAG and PostgreSQL pgvector. Strong in backend development, real-time communications, authentication, REST API design, database modeling, and containerized deployment. Seeking to contribute to modern software development teams.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -71,19 +70,8 @@ export const Home = () => {
             </div>
           </BentoCard>
 
-          {/* Photo */}
-          <BentoCard accent="cyan" padded={false} className="col-span-2 lg:col-span-2 row-span-2 group">
-            <img
-              src="/portfolio/profile.jpg"
-              alt="Rakesha N"
-              className="w-full h-full min-h-[260px] object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-5">
-              <p className="font-mono text-sm text-cyan-300">&lt;RN/&gt;</p>
-              <p className="text-xs text-gray-300">Bengaluru, Karnataka · India</p>
-            </div>
-          </BentoCard>
+          {/* LinkedIn Professional Profile Card */}
+          <LinkedInProfileCard />
 
           {/* Stats */}
           {stats.map((s) => (

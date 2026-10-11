@@ -31,9 +31,9 @@ const certifications = [
 
 export const Certifications = () => {
   return (
-    <section id="certifications" className="min-h-screen flex items-center justify-center py-24 px-4">
+    <section id="certifications" className="min-h-screen flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
       <RevealOnScroll>
-        <div className="max-w-6xl w-full mx-auto">
+        <div className="w-full max-w-7xl 2xl:max-w-[1560px] mx-auto">
           <SectionHeading
             eyebrow="03 — Credentials"
             title="Certifications"

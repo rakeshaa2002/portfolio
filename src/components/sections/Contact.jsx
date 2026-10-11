@@ -27,6 +27,13 @@ const infoTiles = [
     accent: "amber",
   },
   {
+    label: "LinkedIn",
+    value: "linkedin.com/in/rakesha-n-a57269226",
+    href: "https://www.linkedin.com/in/rakesha-n-a57269226/",
+    icon: "💼",
+    accent: "cyan",
+  },
+  {
     label: "GitHub",
     value: "github.com/rakeshaa2002",
     href: "https://github.com/rakeshaa2002",
@@ -60,9 +67,9 @@ export const Contact = () => {
     "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5";
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-24 px-4">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
       <RevealOnScroll>
-        <div className="max-w-6xl w-full mx-auto">
+        <div className="w-full max-w-7xl 2xl:max-w-[1560px] mx-auto">
           <SectionHeading
             eyebrow="04 — Contact"
             title="Get In Touch"
