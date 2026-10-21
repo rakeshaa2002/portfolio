@@ -14,6 +14,7 @@ const frontendSkills = [
 ];
 
 const backendSkills = [
+  { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
   { name: "Django & DRF", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
   { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
@@ -42,7 +43,7 @@ export const About = () => {
           <SectionHeading
             eyebrow="01 — About"
             title="A bit about me"
-            subtitle="Full Stack Developer (Django/DRF + React + Node.js) building production-grade ERP, CRM and AI platforms."
+            subtitle="Full Stack Developer (FastAPI, Django/DRF + React 19 + Node.js) building production-grade healthcare platforms, ERP/CRM systems, and RAG AI assistants."
           />
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[minmax(120px,auto)]">
@@ -50,10 +51,11 @@ export const About = () => {
             <BentoCard accent="blue" className="col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-center">
               <h3 className="text-xl font-bold mb-3">Who I am</h3>
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                Full Stack Developer (Django/DRF + React + Node.js) with extensive hands-on experience
-                building production-grade CRM/ERP systems and an AI medical assistant using RAG and
-                PostgreSQL pgvector. Strong in backend development, real-time communications (Socket.IO, WebRTC),
-                authentication (JWT, RBAC), REST API architecture, database modeling, and containerized deployment with Docker and Render.
+                Full Stack Developer (FastAPI, Django/DRF + React 19 + Node.js) with extensive hands-on experience
+                building production healthcare platforms (Cedarline Clinic with RAG AI &amp; PostgreSQL pgvector),
+                CA Practice OS ERP, and AI clinical assistants. Strong in backend development, RAG pipelines with Google Gemini,
+                real-time communications (Socket.IO, WebRTC), authentication (Argon2id, JWT, RBAC), REST API architecture,
+                database modeling, and containerized deployment with Docker and Render.
               </p>
             </BentoCard>
 

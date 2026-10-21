@@ -21,9 +21,9 @@ const socials = [
   },
 ];
 
-// Numbers grounded in the resume: 5 projects, 15+ technologies.
+// Numbers grounded in the resume: 6+ projects, 15+ technologies.
 const stats = [
-  { value: "5+", label: "Projects Built", accent: "cyan", color: "#22d3ee" },
+  { value: "6+", label: "Projects Built", accent: "cyan", color: "#22d3ee" },
   { value: "15+", label: "Technologies", accent: "emerald", color: "#34d399" },
 ];
 
@@ -47,10 +47,10 @@ export const Home = () => {
             </h1>
             <h2 className="text-lg md:text-2xl font-semibold text-gray-200 mt-2 mb-4">
               Full Stack Developer
-              <span className="text-blue-400"> · Django/DRF, React &amp; Node.js</span>
+              <span className="text-blue-400"> · FastAPI, Django/DRF, React 19 &amp; Node.js</span>
             </h2>
             <p className="text-gray-400 leading-relaxed mb-6">
-              Full Stack Developer (Django/DRF + React + Node.js) with internship and professional experience building production-grade CRM/ERP systems and an AI medical assistant using RAG and PostgreSQL pgvector. Strong in backend development, real-time communications, authentication, REST API design, database modeling, and containerized deployment. Seeking to contribute to modern software development teams.
+              Full Stack Developer (FastAPI, Django/DRF + React 19 + Node.js) with production experience building outpatient healthcare platforms (Cedarline Clinic with RAG AI &amp; PostgreSQL pgvector), enterprise CA ERP systems, and AI medical assistants. Strong in backend development, RAG pipelines, real-time communications, authentication, REST API design, database modeling, and containerized deployment with Docker &amp; Render.
             </p>
 
             <div className="flex flex-wrap gap-3">

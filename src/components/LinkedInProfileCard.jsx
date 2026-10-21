@@ -4,6 +4,7 @@ import { BentoCard } from "./BentoCard";
 export const LinkedInProfileCard = () => {
   const [copied, setCopied] = useState(false);
   const profileUrl = "https://www.linkedin.com/in/rakesha-n-a57269226/";
+  const cedarlineUrl = "https://cedarline-clinic.onrender.com";
   const erpDemoUrl = "https://erp.psrinivasan.com/login";
   const aiDemoUrl = "https://medassist-frontend-f4by.onrender.com/";
 
@@ -132,11 +133,11 @@ export const LinkedInProfileCard = () => {
             </div>
 
             <p className="text-base sm:text-lg font-semibold text-gray-200 leading-snug">
-              Full Stack Developer (Django/DRF + React + Node.js)
+              Full Stack Developer (FastAPI, Django/DRF + React 19 + Node.js)
             </p>
 
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
-              Full Stack Developer | Aspiring AI Engineer | Building GenAI, LLM &amp; RAG Applications | Python • React • Django • FastAPI • PostgreSQL • Vector DB
+              Full Stack Developer | GenAI &amp; RAG Engineer | Building AI Healthcare &amp; ERP Platforms | FastAPI • React 19 • Python • PostgreSQL • pgvector
             </p>
 
             {/* Location & Experience tags */}
@@ -159,6 +160,15 @@ export const LinkedInProfileCard = () => {
         {/* Live Systems & Skill Pills */}
         <div className="flex flex-wrap gap-2 mb-4">
           <a
+            href={cedarlineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold px-2.5 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/35 text-cyan-300 hover:bg-cyan-500/25 transition-all flex items-center gap-1.5"
+          >
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            Cedarline Clinic (Live AI Demo) ↗
+          </a>
+          <a
             href={erpDemoUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -171,12 +181,12 @@ export const LinkedInProfileCard = () => {
             href={aiDemoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-semibold px-2.5 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/35 text-cyan-300 hover:bg-cyan-500/25 transition-all flex items-center gap-1.5"
+            className="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-500/15 border border-blue-500/35 text-blue-300 hover:bg-blue-500/25 transition-all flex items-center gap-1.5"
           >
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            AI Medical Platform (Live) ↗
+            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+            AI Medical Platform ↗
           </a>
-          {["Django/DRF", "React.js", "FastAPI", "GenAI / RAG", "PostgreSQL", "Vector DB", "Node.js", "Docker"].map((skill) => (
+          {["FastAPI", "React 19", "GenAI / RAG", "PostgreSQL", "pgvector", "Django/DRF", "Node.js", "Docker"].map((skill) => (
             <span
               key={skill}
               className="text-xs font-medium px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-gray-300 hover:border-cyan-400/40 hover:text-cyan-300 transition-colors"
